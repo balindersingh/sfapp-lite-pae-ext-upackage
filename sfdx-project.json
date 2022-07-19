@@ -5,7 +5,13 @@
             "default": true,
             "package": "Lite Pae UP Ext",
             "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT"
+            "versionNumber": "0.1.0.NEXT",
+            "dependencies": [
+                {
+                   "package": "Lite Pae",
+                    "versionNumber": "1.4.0.LATEST"
+                }
+             ]
         }
     ],
     "name": "sfapp-lite-pae-up-ext",
@@ -13,6 +19,7 @@
     "sfdcLoginUrl": "https://login.salesforce.com",
     "sourceApiVersion": "55.0",
     "packageAliases": {
-        "Lite Pae UP Ext": "0Ho5e0000010wMtCAI"
+        "Lite Pae UP Ext": "0Ho5e0000010wMtCAI",
+        "Lite Pae": "0Ho5e000000GnEgCAK"
     }
 }

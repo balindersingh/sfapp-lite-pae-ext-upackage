@@ -45,11 +45,17 @@ Recommended : use scratch org for development and then create package and instal
     * ```sfdx force:package:version:report -p '04t5e0000012BgTUUU'```
 * To install a package
     * ```sfdx force:package:install -r -p <packageversionid> -u <org_alias>```
+    * ```sfdx force:package:install -p <packageversionid> -u <org_alias> -s AdminsOnly```
 * To uninstall a package
     * ```sfdx force:package:uninstall -p <packageversionid> -u me@example.com```
 * Here's few sample comands
     * ```sfdx auth:web:login --setdefaultdevhubusername --setalias <dev-hub-alias>```
-    * ```sfdx force:package:create --name <packagename> --packagetype Managed --path "force-app" --targetdevhubusername <dev-hub-alias>```
-    * ```sfdx force:package:version:create -p <packagename> --postinstallscript "PostInstall" -x```
-    * ```sfdx force:package:version:promote --package "04t5e00000125s9AAA"```
+    * For Managed Packages:
+        * ```sfdx force:package:create --name <packagename> --packagetype Managed --path "force-app" --targetdevhubusername <dev-hub-alias>```
+        * ```sfdx force:package:version:create -p <packagename> --postinstallscript "PostInstall" -x```
+        * ```sfdx force:package:version:promote --package "04t5e00000125s9AAA"```
+    * For Unlocked Packages:
+        * ```sfdx force:package:create -n <packagename>  -t Unlocked -r force-app```
+            * ```sfdx force:package:create -n "Lite Pae UP Ext" -d "Unlocked Extension Package for Lite Pae" -t Unlocked -r force-app```
+        * ```sfdx force:package:version:create -p "Lite Pae UP Ext" -x```
 * https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_dev2gp_create_pkg_ver_promote.htm
