@@ -17,9 +17,8 @@
             <numberValue>12500.0</numberValue>
         </value>
     </choices>
-    <environments>Default</environments>
-    <interviewLabel>Lite Pae in Flow {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Lite Pae in Flow</label>
+    <interviewLabel>Lite Pae in Flow (Single transaction) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lite Pae in Flow (Single transaction)</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -50,13 +49,13 @@
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>litepae__Secret_Key__c</field>
+            <field>lite_pae__Secret_Key__c</field>
             <operator>IsNull</operator>
             <value>
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
-        <object>litepae__Payment_Account__c</object>
+        <object>lite_pae__Payment_Account__c</object>
         <outputAssignments>
             <assignToReference>paymentRecordId</assignToReference>
             <field>Id</field>
@@ -74,8 +73,8 @@
             <targetReference>Summary</targetReference>
         </connector>
         <fields>
-            <name>litepae</name>
-            <extensionName>litepae:litePaeForFlow</extensionName>
+            <name>lite_pae</name>
+            <extensionName>lite_pae:litePaeForFlow</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>amountToBeCharged</name>
@@ -93,6 +92,12 @@
                 <name>buttonLabel</name>
                 <value>
                     <stringValue>Next</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>cardholdernameplaceholder</name>
+                <value>
+                    <stringValue>Cardholder name</stringValue>
                 </value>
             </inputParameters>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>

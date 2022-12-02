@@ -6,6 +6,7 @@
 .sfdx/
 .sf/
 .localdevserver/
+assets/
 
 # LWC VSCode autocomplete
 **/lwc/jsconfig.json
@@ -38,5 +39,8 @@ $RECYCLE.BIN/
 # VSCODE files
 .vscode
 
+
 # temp files
 temp.txt
+/backup
+/temp
