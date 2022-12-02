@@ -31,6 +31,8 @@ Recommended : use scratch org for development and then create package and instal
 ```sfdx force:user:create -u orgf4v1 --setalias stduser --definitionfile config/std-user-def.json Username=dummystduser@litepae.ca```
     * with permission set assigned
     * ```sfdx force:user:create -u orgf4v1 --setalias stduser --definitionfile config/std-user-def.json permsets="Payments_Light" Username=dummystduser@litepae.ca```
+* Retrieve some metadata components
+```sfdx force:source:retrieve -m "Flow:litepaeOffsessionCharge, Flow:litepaeCustomer, Flow:litepaePaymentMethods, CustomField:Contact.Stripe_Customer_Id__c, PermissionSet:Lite_Pae_EXT_permissions" -u beta1.5_1```
 
 ## Package creation commands
 * create unlocked package 
@@ -53,9 +55,11 @@ Recommended : use scratch org for development and then create package and instal
     * For Managed Packages:
         * ```sfdx force:package:create --name <packagename> --packagetype Managed --path "force-app" --targetdevhubusername <dev-hub-alias>```
         * ```sfdx force:package:version:create -p <packagename> --postinstallscript "PostInstall" -x```
-        * ```sfdx force:package:version:promote --package "04t5e00000125s9AAA"```
+        * ```sfdx force:package:version:promote --package "04t5e0dsfdsfdfs"```
     * For Unlocked Packages:
         * ```sfdx force:package:create -n <packagename>  -t Unlocked -r force-app```
-            * ```sfdx force:package:create -n "Lite Pae UP Ext" -d "Unlocked Extension Package for Lite Pae" -t Unlocked -r force-app```
+            * ```sfdx force:package:create -n "Lite Pae UP Ext" -d "Unlocked Package with sample components to use/extend Lite Pae" -t Unlocked -r force-app```
         * ```sfdx force:package:version:create -p "Lite Pae UP Ext" -x```
+        * ```sfdx force:package:update -p "Your Package Alias" -n "New Package Name"```
+            * or use package id ```sfdx force:package:update -p )ho... -d "New package description"```
 * https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_dev2gp_create_pkg_ver_promote.htm
