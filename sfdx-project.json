@@ -8,7 +8,7 @@
             "versionNumber": "0.2.0.NEXT",
             "dependencies": [
                 {
-                   "package": "lite_pae@1.5.0.8"
+                   "package": "lite_pae@1.5.0.10"
                 }
              ]
         }
@@ -19,6 +19,6 @@
     "sourceApiVersion": "55.0",
     "packageAliases": {
         "Lite Pae UP Ext": "0Ho5e0000010wMtCAI",
-        "lite_pae@1.5.0.8": "04t4x000000ae2vAAA"
+        "lite_pae@1.5.0.10": "04t4x000000ae3KAAQ"
     }
 }

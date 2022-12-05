@@ -59,7 +59,7 @@ Recommended : use scratch org for development and then create package and instal
     * For Unlocked Packages:
         * ```sfdx force:package:create -n <packagename>  -t Unlocked -r force-app```
             * ```sfdx force:package:create -n "Lite Pae UP Ext" -d "Unlocked Package with sample components to use/extend Lite Pae" -t Unlocked -r force-app```
-        * ```sfdx force:package:version:create -p "Lite Pae UP Ext" -x```
+        * ```sfdx force:package:beta:version:create -p "Lite Pae UP Ext" -x```
         * ```sfdx force:package:update -p "Your Package Alias" -n "New Package Name"```
             * or use package id ```sfdx force:package:update -p )ho... -d "New package description"```
 * https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_dev2gp_create_pkg_ver_promote.htm
