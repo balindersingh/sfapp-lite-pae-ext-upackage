@@ -4,8 +4,8 @@
     <decisions>
         <name>Check_If_Stripe_Field_is_populated</name>
         <label>Check If Stripe Field is populated</label>
-        <locationX>182</locationX>
-        <locationY>398</locationY>
+        <locationX>547</locationX>
+        <locationY>446</locationY>
         <defaultConnector>
             <targetReference>Payment_Method_List</targetReference>
         </defaultConnector>
@@ -38,7 +38,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -52,8 +52,8 @@
         <description>Get Payment record and set its id to paymentRecordId variable</description>
         <name>Get_Payment_Record</name>
         <label>Get Payment Record</label>
-        <locationX>182</locationX>
-        <locationY>158</locationY>
+        <locationX>547</locationX>
+        <locationY>206</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Stripe_Customer_Id</targetReference>
@@ -75,8 +75,8 @@
     <recordLookups>
         <name>Get_Stripe_Customer_Id</name>
         <label>Get Stripe Customer Id</label>
-        <locationX>182</locationX>
-        <locationY>278</locationY>
+        <locationX>547</locationX>
+        <locationY>326</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_If_Stripe_Field_is_populated</targetReference>
@@ -98,11 +98,11 @@
     <recordLookups>
         <name>Query_again_Stripe_Customer_Id</name>
         <label>Query again - Stripe Customer Id</label>
-        <locationX>50</locationX>
-        <locationY>638</locationY>
+        <locationX>415</locationX>
+        <locationY>686</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Payment_Method_List</targetReference>
+            <targetReference>Check_If_Stripe_Field_is_populated</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -121,8 +121,8 @@
     <screens>
         <name>customerProfileScreen</name>
         <label>customerProfileScreen</label>
-        <locationX>50</locationX>
-        <locationY>518</locationY>
+        <locationX>415</locationX>
+        <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -161,8 +161,8 @@
     <screens>
         <name>Payment_Method_List</name>
         <label>Payment Method List</label>
-        <locationX>182</locationX>
-        <locationY>854</locationY>
+        <locationX>547</locationX>
+        <locationY>902</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -202,8 +202,8 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>56</locationX>
-        <locationY>0</locationY>
+        <locationX>421</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Get_Payment_Record</targetReference>
         </connector>
