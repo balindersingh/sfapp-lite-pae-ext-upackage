@@ -3,13 +3,13 @@
         {
             "path": "force-app",
             "package": "Lite Pae UP Sample",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
+            "versionName": "ver 0.2",
+            "versionNumber": "0.2.0.NEXT",
             "default": true,
             "dependencies": [
                 {
                     "package": "Lite Pae",
-                    "versionNumber": "1.6.0.LATEST"
+                    "versionNumber": "1.10.0.LATEST"
                 }
             ]
         }
