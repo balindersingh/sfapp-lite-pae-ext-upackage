@@ -32,7 +32,7 @@ Recommended : use scratch org for development and then create package and instal
     * with permission set assigned
     * ```sfdx force:user:create -u orgf4v1 --setalias stduser --definitionfile config/std-user-def.json permsets="Payments_Light" Username=dummystduser@litepae.ca```
 * Retrieve some metadata components
-```sfdx force:source:retrieve -m "Flow:litepaeOffsessionCharge, Flow:litepaeCustomer, Flow:litepaePaymentMethods, CustomField:Contact.Stripe_Customer_Id__c, PermissionSet:Lite_Pae_EXT_permissions" -u beta1.5_1```
+```sfdx force:source:retrieve -m "Flow:litepaeOffsessionCharge, Flow:litepaeCustomer, Flow:litepaePaymentMethods,Flow:litepaeCustomerWithPaymentMethodsAndCharge, CustomField:Contact.Stripe_Customer_Id__c, PermissionSet:Lite_Pae_EXT_permissions" -u beta-r1.10```
 
 ## Package creation commands
 * create unlocked package 
