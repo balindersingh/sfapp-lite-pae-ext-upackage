@@ -4,5 +4,5 @@
 releasenotesurl="https://www.litepae.io/"
 
 echo "====== Creating beta package ======="
-sfdx force:package:beta:version:create -p "Lite Pae UP Sample" -x --releasenotesurl "$releasenotesurl" -c|| exit 1
+sf package version create -p "Lite Pae UP Sample" -x --releasenotesurl "$releasenotesurl" -c|| exit 1
 echo "====== Done ======"
