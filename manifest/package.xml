@@ -2,6 +2,8 @@
     <types>
         <members>Lite_Pae_in_Flow_Single_transaction</members>
         <members>Lite_Pae_Send_an_Invoice</members>
+        <members>Lite_Pae_Subscription_with_CustomerProfile_And_PaymentMethods</members>
+        <members>Lite_Pae_Subscription_with_PriceId_CustomerProfile_And_PaymentMethods</members>
         <members>litepaeCustomer</members>
         <members>litepaeCustomerWithPaymentMethods</members>
         <members>litepaeCustomerWithPaymentMethodsAndCharge</members>
