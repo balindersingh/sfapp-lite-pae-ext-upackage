@@ -6,6 +6,11 @@
         <field>Contact.Stripe_Customer_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Order.Stripe_Invoice_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Lite Pae EXT - permissions</label>
 </PermissionSet>

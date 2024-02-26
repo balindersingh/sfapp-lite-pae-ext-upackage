@@ -5,34 +5,41 @@ Unlocked package consists of few components to be deployed in customer org to us
 Development could be done in either scratch org or developer/sandbox org.
 Recommended : use scratch org for development and then create package and install it in your orgs.
 * create a new scratch org
-```sfdx force:org:create -f config/project-scratch-def.json -a <orgAliasOrUsername> --setdefaultusername```
-```sfdx force:org:create -f config/project-scratch-def.json -a <orgAliasOrUsername> --nonamespace```
+    * ```sf org create scratch -f config/project-scratch-def.json -a <orgAliasOrUsername>```
+    * ```sf org create scratch -f config/project-scratch-def.json -a <orgAliasOrUsername> --no-namespace```
 * Generate password
-```sfdx force:user:password:generate -u <orgAliasOrUsername>```
+    * ```sf org generate password -o <orgAliasOrUsername>  --complexity 3```
 * Display org info
-```sfdx force:user:display -u <orgAliasOrUsername>```
+    * ```sf org display user -o <orgAliasOrUsername>```
 * Delete a scratch org
-```sfdx force:org:delete -u <orgAliasOrUsername>```
+    * ```sf org delete scratch -o <orgAliasOrUsername>```
 * To list all active / inactive orgs
-```sfdx force:org:list --all```
+    * ```sf org list --all```
 * Deploy source code to scratch org
-```sfdx force:source:push -u <orgAliasOrUsername>```
+    * ```sf project deploy start -o <orgAliasOrUsername>```
 * Make changes to the components
 * Pull the changes from scratch org to code
-```sfdx force:source:pull -u <orgAliasOrUsername>```
+    * ```sf project retrieve start -o <orgAliasOrUsername>```
 * To install LWC local dev server to render LWC locally for testing
-```sfdx plugins:install @salesforce/lwc-dev-server && sfdx plugins:update```
+    * ```sf plugins install apex@2.2.22```
+    * ```sfdx plugins:install @salesforce/lwc-dev-server && sfdx plugins:update```
 * To start local LWC dev server
-```sfdx force:lightning:lwc:start```
+    * ```sfdx force:lightning:lwc:start```
 * assign permission set to user
-    * ```sfdx force:user:permset:assign --permsetname <permset_name> -u <username/alias>```
-    * i.e. ```sfdx force:user:permset:assign --permsetname Payments_Admin -u <username/alias>``` 
+    * ```sfdx force:user:permset:assign --permsetname <permset_name> -u <orgAliasOrUsername>```
+    * i.e. ```sfdx force:user:permset:assign --permsetname Payments_Admin -u <orgAliasOrUsername>``` 
 * Create a standard platform user
-```sfdx force:user:create -u orgf4v1 --setalias stduser --definitionfile config/std-user-def.json Username=dummystduser@litepae.ca```
+    * ```sfdx force:user:create -u orgf4v1 --setalias stduser --definitionfile config/std-user-def.json Username=dummystduser@litepae.ca```
     * with permission set assigned
     * ```sfdx force:user:create -u orgf4v1 --setalias stduser --definitionfile config/std-user-def.json permsets="Payments_Light" Username=dummystduser@litepae.ca```
 * Retrieve some metadata components
-```sfdx force:source:retrieve -m "Flow:litepaeOffsessionCharge, Flow:litepaeCustomer, Flow:litepaePaymentMethods,Flow:litepaeCustomerWithPaymentMethodsAndCharge, CustomField:Contact.Stripe_Customer_Id__c, PermissionSet:Lite_Pae_EXT_permissions" -u beta-r1.10```
+    * ```sf project retrieve start --metadata "Flow:litepaeOffsessionCharge, Flow:litepaeCustomer, Flow:litepaePaymentMethods,Flow:litepaeCustomerWithPaymentMethodsAndCharge, CustomField:Contact.Stripe_Customer_Id__c, PermissionSet:Lite_Pae_EXT_permissions" -o <orgAliasOrUsername>```
+* Retrieve source based on package.xml
+    * ```sf project retrieve start --manifest manifest/package.xml -o <orgAliasOrUsername>```
+* Deploy all components listed in a manifest:
+    * ```sf project deploy start --manifest manifest/package.xml -o <orgAliasOrUsername>```
+* Run the tests that aren’t in any managed packages as part of a deployment:
+    * ```sf project deploy start --manifest manifest/package.xml --test-level RunLocalTests -o <orgAliasOrUsername>```
 
 ## Package creation commands
 * create unlocked package 
