@@ -3,13 +3,13 @@
         {
             "path": "force-app",
             "package": "Lite Pae UP Sample",
-            "versionName": "ver 0.2",
-            "versionNumber": "0.2.0.NEXT",
+            "versionName": "ver 0.3",
+            "versionNumber": "0.3.0.NEXT",
             "default": true,
             "dependencies": [
                 {
                     "package": "Lite Pae",
-                    "versionNumber": "1.10.0.LATEST"
+                    "versionNumber": "1.21.0.LATEST"
                 }
             ]
         }
@@ -17,7 +17,7 @@
     "name": "sfapp-lite-pae-up-ext",
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "55.0",
+    "sourceApiVersion": "59.0",
     "packageAliases": {
         "Lite Pae": "0Ho4x000000CagiCAC",
         "Lite Pae UP Sample": "0Ho4x000000CahHCAS"
